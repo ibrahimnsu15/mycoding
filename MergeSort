@@ -1,0 +1,32 @@
+int num[1000],temp[1000];
+
+int mergesort(int low , int high){
+
+    if(low == high)
+        return ;
+    
+    int mid = (low+high)/2;
+    
+    mergesort(low , mid);
+    mergesort(mid+1 , high);
+    
+    for(int i = low ,int j = mid+1 , k = low  ; k <= high ; k++){
+        if(i == m+1){
+            temp[k] = num[j++];
+        
+        }else if(j == high+1){
+            temp[k] = num[i++];
+            
+        }else if(num[i] < num[j]){
+            temp[k] = num[j++];
+        
+        }else{
+            temp[k] = num[i++];
+        }
+    }
+    
+    for(int i = low ; i <= high ; i++){
+        num[i] = temp[i];
+    }
+
+}
