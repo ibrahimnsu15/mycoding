@@ -1,0 +1,107 @@
+#include <iostream>
+#include <queue>
+using namespace std;
+
+int main()
+{
+    queue<int> trakerX;
+    queue<int> trakerY;
+
+    int n;
+    cout<<"Enter maze size : ";
+    while(cin>>n && n>1){
+        char maze[n][n];
+        int cost[n][n];
+        int startX,startY,endX,endY;
+
+        //
+        for(int i = 0 ; i < n ; i++){
+            for(int j = 0 ; j < n ; j++){
+
+                cin>>maze[i][j];
+                cost[i][j]=100;
+
+
+                if(maze[i][j] == 'X'){
+                    startX = i,startY = j;
+                    cost [i][j] = 0;
+                }else if(maze[i][j] == '@'){
+                    endX = i ; endY = j ;
+                }
+
+            }
+        }
+
+        trakerX.push(startX);
+        trakerY.push(startY);
+
+
+        int tempX,tempY;
+
+        while(!trakerX.empty() && !trakerY.empty() ){
+            tempX =  trakerX.front();
+            tempY =  trakerY.front();
+            trakerX.pop();
+            trakerY.pop();
+
+            if( tempX+1 < n &&  cost[tempX+1][tempY] > cost[tempX][tempY]+1 && maze[tempX+1][tempY] != 'O'){
+
+                if(tempX+1 != endX || tempY != endY)
+                {
+                    trakerX.push(tempX+1);
+                    trakerY.push(tempY);
+                }
+
+                cost[tempX+1][tempY] = cost[tempX][tempY]+1;
+            }
+
+            if( tempX-1 >= 0 &&  cost[tempX-1][tempY] > cost[tempX][tempY]+1 && maze[tempX-1][tempY] != 'O'){
+
+                if(tempX-1 != endX || tempY != endY)
+                {
+                    trakerX.push(tempX-1);
+                    trakerY.push(tempY);
+                }
+
+                cost[tempX-1][tempY] = cost[tempX][tempY]+1;
+            }
+
+            if( tempY+1 < n &&  cost[tempX][tempY+1] > cost[tempX][tempY]+1 && maze[tempX][tempY+1] != 'O' ){
+                if(tempX != endX || tempY+1 != endY)
+                {
+                    trakerX.push(tempX);
+                    trakerY.push(tempY+1);
+                }
+                cost[tempX][tempY+1] = cost[tempX][tempY]+1;
+            }
+
+            if( tempY-1 >= 0 &&  cost[tempX][tempY-1] > cost[tempX][tempY]+1 && maze[tempX][tempY-1] != 'O'){
+                if(tempX != endX || tempY-1 != endY)
+                {
+                    trakerX.push(tempX);
+                    trakerY.push(tempY-1);
+                }
+                cost[tempX][tempY-1] = cost[tempX][tempY]+1;
+            }
+
+        }
+
+        for(int i = 0 ; i < n ; i++){
+            for(int j = 0 ; j < n ; j++){
+                cout<<cost[i][j]<<"\t\t\t";
+            }
+            cout<<endl;
+        }
+
+
+        if(cost[endX][endY] < INT_MAX )
+            cout<<cost[endX][endY]<<" step"<<endl;
+        else
+            cout<<"Not possible"<<endl;
+
+
+        cout<<"Enter maze size : ";
+    }
+
+    return 0;
+}
