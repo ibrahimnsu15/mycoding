@@ -1,0 +1,22 @@
+int main(){
+    set<int> s;
+
+    s.insert(12);
+    s.insert(13);
+    s.insert(13);
+    s.insert(12);
+    s.insert(16);
+
+    cout<<"size : "<<s.size()<<endl;
+
+    if(s.find(1)== s.end()){
+        cout<<"Find"<<endl;
+    }
+
+    while(!s.empty()){
+        cout<<s.end()<<endl;
+        s.
+    }
+
+    return 0;
+}
