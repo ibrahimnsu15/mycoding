@@ -1,0 +1,17 @@
+int main(){
+
+    map<int,map<int,string> > mymap;
+
+    mymap[2][5] = "ibrahim";
+
+    cout<<mymap[2][5]<<endl;;
+
+
+    vector< string> myvec[10];
+
+    string name = "ibrahim";
+    myvec[2].push_back(name);
+    cout<<"here"<<endl;
+    cout<<myvec[2][0]<<endl;
+
+}
