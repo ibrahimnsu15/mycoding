@@ -7,8 +7,8 @@ int main(){
     cout<<mymap[2][5]<<endl;;
 
 
-    vector< string> myvec[10];
-
+    vector< string> myvec[10];  // vector < vector < string > > myvec;
+   
     string name = "ibrahim";
     myvec[2].push_back(name);
     cout<<"here"<<endl;
