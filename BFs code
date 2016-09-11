@@ -105,3 +105,63 @@ int main()
 
     return 0;
 }
+
+void Bfs(vector < int > node[] ,int source){
+
+    queue < int > tracker;
+    tracker.push(source);
+    map<int,string> visit;
+    visit[source] = "yes";
+    pair<int,int> p;
+    queue<pair<int,int> > level;
+
+    p.first = source;
+    p.second = 0;
+    level.push(p);
+    map< int,int > temp_level;
+
+    temp_level[source] = 0;
+
+    while(!tracker.empty()){
+
+        int pos = tracker.front();
+        tracker.pop();
+        int length = node[pos].size();
+        int i = 0;
+        while(i < length){
+            if(visit[node[pos][i]] != "yes"){
+                p.first = node[pos][i];
+                p.second = temp_level[pos] + 1;
+                temp_level[node[pos][i]] = temp_level[pos] + 1;
+                visit[node[pos][i]] = "yes";
+                tracker.push(node[pos][i]);
+                level.push(p);
+            }
+            i++;
+        }
+    }
+
+    while(!level.empty()){
+        p = level.front();
+        level.pop();
+        cout<<p.second<<" level : "<<p.first<<endl;
+    }
+}
+
+int main()
+{
+    vector < int > node[100];
+    for(int i = 1 ; i <= 10 ; i++){
+        int x,y;
+        cin>>x>>y;
+
+        node[x].push_back(y);
+
+        node[y].push_back(x);
+
+    }
+    Bfs(node,1);
+
+    return 0;
+}
+
