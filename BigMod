@@ -1,0 +1,13 @@
+
+long long BigMode(int a,int b,int m){
+    if(b == 0){
+        return 1;
+    }
+
+    int x = BigMode(a,b/2,m);
+    x = ((x%m)*(x%m))%m;
+    if(b%2 == 1)
+        x = ((x%m)*(a%m))%m;
+    return x;
+
+}
