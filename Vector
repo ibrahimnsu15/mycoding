@@ -27,3 +27,7 @@ int main()
 
     return 0;
 }
+// Iterator 
+vector<int>::iterator IT;
+for(IT = v.begain() ; IT!=v.end() ; IT++)
+    cout<<*IT<<endl;
