@@ -1,0 +1,30 @@
+
+int cost[1000],weigth[1000];
+int Cap,n;
+int dp[1000][1000];
+
+int Greedy(int i , int w){
+
+    if(i == n) return 0;
+
+    if(dp[i][w] != -1)return dp[i][w];
+
+    int profit1 = 0,profit2;
+
+    if( w+weigth[i] <= Cap ){
+
+        profit1 = cost[i]+Greedy(i+1,w+weigth[i]);
+    }
+
+    profit2 = Greedy(i+1,w);
+
+    dp[i][w] = max(profit1,profit2);
+    return dp[i][w];
+}
+
+void DP_Reset(){
+    ///DP intialized
+        for(int i = 0 ; i < 1000 ; i++)
+            for(int j = 0 ; j < 1000 ; j++)
+                dp[i][j]=-1;
+}
