@@ -1,0 +1,33 @@
+
+struct NodeType{
+    int value;
+    int index;
+};
+
+bool operator<(NodeType a , NodeType b){
+    return a.value < b.value ;
+}
+
+int main(){
+
+    priority_queue<NodeType> pq;
+
+    for(int i = 0 ; i < 5 ; i++){
+        int n;
+        cin>>n;
+        NodeType node;
+        node.value = n;
+        node.index = i;
+        pq.push(node);
+    }
+
+    for(int i = 0 ; i < 5 ; i++){
+        NodeType node ;
+        node = pq.top();
+        cout<<node.value<<" "<<node.index<<e;
+        pq.pop();
+    }
+
+    return 0;
+}
+
