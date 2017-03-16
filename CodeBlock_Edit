@@ -1,0 +1,42 @@
+Setting - 
+
+Editor - 
+	Syntax Highlighting -
+		1.comment color change
+
+Abbreviations - 
+	co	- cout<< | <<endl;
+	for 	- for ( int i = 0 ; i < | ; i++ ){}
+	if 	- if(|){}
+	ife	- if (|){}else{}
+	input1	-
+
+int t;
+cin>>t;
+
+for(int kase = 1 ; kase <= t ; kase++){
+
+    cout<<"Case "<<kase<<": Yes"<<endl;
+}
+	
+	input2	-
+
+int t;cin>>t;
+
+while(t--){
+    |
+}
+		
+	printf	- printf("|");
+	scan	- scanf("%|",);
+			
+sourse code formatter -
+	-Java
+
+Keyboard Shortcurt -
+		plug in 
+			-Sourse code formatter (AStyle)
+		Edit
+			- auto complete
+		
+
