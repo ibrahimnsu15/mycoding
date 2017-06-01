@@ -1,0 +1,1123 @@
+//#include<stdio.h>
+//#include<vector>
+//#include<map>
+//#include<iostream>
+//#include<math.h>
+//#include<queue>
+//#include<cstring>
+//using namespace std;
+//int m;
+//
+//struct NodeType{
+//    int v;
+//    int cost;
+//    string word;
+//};
+//
+//int BFS(vector<NodeType> adj[] , map<int,int> len ){
+//    queue<int> traker;
+//    queue<string> trakerWord;
+//    traker.push(1);
+//    trakerWord.push(" ");
+//
+//    map<int,int> visit;
+//    int costStore[(2*m)+1];
+//
+//    memset(costStore,0,sizeof(costStore));
+//
+//
+//    while(!traker.empty()){
+//        int x=traker.front();
+//        traker.pop();
+////        cout<<x<<endl;
+//
+//        string str = trakerWord.front();
+//        trakerWord.pop();
+//
+//        if(x!=2)
+//        {
+//            int loop=-1,tempC=-1;
+//            string wrd="";
+//            bool flag = false;
+//            for(int i = 0 ; i < len[x]; i++)
+//            {
+//                NodeType node;
+//                node = adj[x][i];
+//                int y = node.v;
+//                int cst = node.cost;
+//                string w = node.word;
+//                if(x==y){
+//                    loop=y;
+//                    tempC=cst;
+//                    wrd=w;
+//                }
+//                if((y!=1 && visit[y]<=0 ) && (str[0]!=w[0]) )
+//                {
+//                    traker.push(y);
+//                    trakerWord.push(w);
+//                    costStore[y] = cst+costStore[x];
+//                    visit[y]++;
+//                }else if((y!=1 && visit[y]<=0) && (str[0]==w[0] && visit[y]<=3 ) ){
+//                    flag=true;
+//                }else if(( y!=1 && (cst+costStore[x] < costStore[y]) && str[0]!=w[0]) || (traker.empty() && costStore[2]==0 && i ==len[x]-1 && visit[y] <= 1) )
+//                {
+//                    costStore[y] = cst+costStore[x];
+//                    traker.push(y);
+//                    trakerWord.push(w);
+//                    visit[y]++;
+////                    cout<<x<<" = "<<y<<endl;
+//                }
+//            }
+//            if(flag){
+//                traker.push(loop);
+//                trakerWord.push(wrd);
+//                costStore[loop] = tempC+costStore[x];
+//                visit[loop]++;
+////                    cout<<x<<" = "<<y<<endl;
+//            }
+//        }
+//    }
+//
+////    cout<<"yes"<<endl;|| (traker.empty() && costStore[2]==0 && i ==len[x]-1 && visit[y] <= 1)|| (visit[y]==1 && x==y)
+//    return costStore[2];
+//}
+//
+//int main()
+//{
+//////    int m;
+////    vector<int>data;
+////    int len=0;
+//    while(cin>>m){
+//        if(m==0)
+//            break;
+//        string start,End;
+//        cin>>start>>End;
+//
+//        map<string,int> LanguageSerial;
+//        vector<NodeType> adjacent[(2*m)+3];
+//
+//        LanguageSerial[start]=1;
+//        LanguageSerial[End]=2;
+//
+//        map<int,map<int,int> > cost;
+//        map<int,map<int,string> > word;
+//
+//        map<int,int> Adjlen;
+//
+//        for(int i = 0,s=3 ; i < m ; i++){
+//            string lan1,lan2,costLan;
+//            cin>>lan1>>lan2>>costLan;
+//            int u,v,c;
+//            if(LanguageSerial[lan1]==0){
+//                LanguageSerial[lan1]=s;
+//                s++;
+//            }
+//
+//            if(LanguageSerial[lan2]==0){
+//                LanguageSerial[lan2]=s;
+//                s++;
+//            }
+//
+//            u = LanguageSerial[lan1];
+//            v = LanguageSerial[lan2];
+//            c = costLan.length();
+////            cout<<u<<" "<<v<<endl;
+//            NodeType node1;
+//            node1.v = v;
+//            node1.cost = c;
+//            node1.word = costLan;
+//
+//            NodeType node2;
+//            node2.v = u;
+//            node2.cost = c;
+//            node2.word = costLan;
+//
+//            adjacent[u].push_back(node1);
+//            adjacent[v].push_back(node2);
+//            Adjlen[u]++;
+//            Adjlen[v]++;
+//
+////            if(cost[u][v]==0 ){
+////                cost[u][v]=c;
+////                cost[v][u]=c;
+////                adjucent[u].push_back(v);
+////                adjucent[v].push_back(u);
+////                Adjlen[u]++;
+////                Adjlen[v]++;
+//////                visit[costLan]=1;
+//////                cout<<u<<" "<<v<<endl;
+////            }else if(cost[u][v] > c){
+////                cost[u][v]=c;
+////                cost[v][u]=c;
+//////                visit[costLan]=1;
+////            }
+//        }
+////        cout<<"yes"<<endl;
+////        cout<<adjucent[5][0]<<endl;
+//        int ans = BFS(adjacent,Adjlen);
+//
+//        if(ans == 0){
+//            cout<<"impossivel\n";
+//        }else{
+//            cout<<ans<<endl;
+//        }
+////        len++;
+////        data.push_back(ans);
+//    }
+//
+////    for(int i = 0 ; i < len ; i++){
+////        if(data[i]!=0){
+////            cout<<data[i]<<endl;
+////        }else{
+////              cout<<"impossivel\n";
+////        }
+////    }
+//    return 0;
+//}
+//
+//
+///LightOj in/out
+int main()
+{
+    int t;
+    cin>>t;
+
+    for(int kase = 1 ; kase <= t ; kase++){
+        cout<<"Case "<<kase<<": Yes"<<endl;
+    }
+
+    return 0;
+}
+
+#include<iostream>
+#include<stdio.h>
+#include<math.h>
+#include<map>
+#include<queue>
+#include<cmath>
+#include<vector>
+#include<algorithm>
+#include<stdlib.h>
+#include<cstring>
+using namespace std;
+
+void Bfs(vector < int > node[],map<int,int> Size,int cost[][],int m){
+
+    queue < int > tracker;
+    tracker.push(1);
+    int CostMap[m];
+    memset(CostMap,0,m);
+    while(!tracker.empty()){
+
+        int pos = tracker.front();
+        tracker.pop();
+        int length = Size[pos];
+        int i = 0;
+        while(i < length){
+            if(visit[node[pos][i]] != "yes"){
+                p.first = node[pos][i];
+                p.second = temp_level[pos] + 1;
+                temp_level[node[pos][i]] = temp_level[pos] + 1;
+                visit[node[pos][i]] = "yes";
+                tracker.push(node[pos][i]);
+                level.push(p);
+            }
+            i++;
+        }
+    }
+
+}
+
+int main(){
+
+    int m;
+    while(cin>>m){
+        map<string,int> serial;
+        map<int,int> Size;
+        if(m==0)
+            break;
+        vector<int> node[m];
+        string str1,str2,str3;
+        cin>>str1>>str2;
+        int p=3,cost[][];
+        serial[str1]=1;
+        serial[str2]=2;
+        for(int i = 0 ; i < m ; i++){
+            cin>>str1>>str2>>str3;
+            if(serial[str1]==0){
+                serial[str1]=p;
+                p++;
+            }
+            if(serial[str2]==0){
+                serial[str2]=p;
+                p++;
+            }
+            int len = str3.length();
+            cost[serial[str1]][serial[str2]]=len;
+            cost[serial[str2]][serial[str1]]=len;
+            node[serial[str1]].push_back(serial[str2]);
+            node[serial[str2]].push_back(serial[str1]);
+            Size[serial[str1]]++;
+            Size[serial[str2]]++;
+        }
+
+    return 0;
+}
+
+
+/// knapsack
+
+int cost[1000],weigth[1000];
+int Cap,n;
+int dp[1000][1000];
+
+int Greedy(int i , int w){
+
+    if(i == n) return 0;
+
+    if(dp[i][w] != -1)return dp[i][w];
+
+    int profit1 = 0,profit2;
+
+    if( w+weigth[i] <= Cap ){
+
+        profit1 = cost[i]+Greedy(i+1,w+weigth[i]);
+    }
+
+    profit2 = Greedy(i+1,w);
+
+    dp[i][w] = max(profit1,profit2);
+    return dp[i][w];
+}
+
+void DP_Reset(){
+    ///DP intialized
+        for(int i = 0 ; i < 1000 ; i++)
+            for(int j = 0 ; j < 1000 ; j++)
+                dp[i][j]=-1;
+}
+
+
+/// 2d vector map
+
+int main(){
+
+    map<int,map<int,string> > mymap;
+
+    mymap[2][5] = "ibrahim";
+
+    cout<<mymap[2][5]<<endl;;
+
+
+    vector< string> myvec[10];  // vector < vector < string > > myvec;
+
+    string name = "ibrahim";
+    myvec[2].push_back(name);
+    cout<<"here"<<endl;
+    cout<<myvec[2][0]<<endl;
+
+}
+
+/// BFS
+
+void Bfs(vector < int > node[] ,int source){
+
+    queue < int > tracker;
+    tracker.push(source);
+    map<int,string> visit;
+    visit[source] = "yes";
+    pair<int,int> p;
+    queue<pair<int,int> > level;
+
+    p.first = source;
+    p.second = 0;
+    level.push(p);
+    map< int,int > temp_level;
+
+    temp_level[source] = 0;
+
+    while(!tracker.empty()){
+
+        int pos = tracker.front();
+        tracker.pop();
+        int length = node[pos].size();
+        int i = 0;
+        while(i < length){
+            if(visit[node[pos][i]] != "yes"){
+                p.first = node[pos][i];
+                p.second = temp_level[pos] + 1;
+                temp_level[node[pos][i]] = temp_level[pos] + 1;
+                visit[node[pos][i]] = "yes";
+                tracker.push(node[pos][i]);
+                level.push(p);
+            }
+            i++;
+        }
+    }
+
+    while(!level.empty()){
+        p = level.front();
+        level.pop();
+        cout<<p.second<<" level : "<<p.first<<endl;
+    }
+}
+
+int main()
+{
+    vector < int > node[100];
+    for(int i = 1 ; i <= 10 ; i++){
+        int x,y;
+        cin>>x>>y;
+
+        node[x].push_back(y);
+
+        node[y].push_back(x);
+
+    }
+    Bfs(node,1);
+
+    return 0;
+}
+
+///BFS other
+
+
+void Bfs(vector < int > node[] ,int source){
+
+    queue < int > tracker;
+    tracker.push(source);
+    map<int,string> visit;
+    visit[source] = "yes";
+    pair<int,int> p;
+    queue<pair<int,int> > level;
+
+    p.first = source;
+    p.second = 0;
+    level.push(p);
+    map< int,int > temp_level;
+
+    temp_level[source] = 0;
+
+    while(!tracker.empty()){
+
+        int pos = tracker.front();
+        tracker.pop();
+        int length = node[pos].size();
+        int i = 0;
+        while(i < length){
+            if(visit[node[pos][i]] != "yes"){
+                p.first = node[pos][i];
+                p.second = temp_level[pos] + 1;
+                temp_level[node[pos][i]] = temp_level[pos] + 1;
+                visit[node[pos][i]] = "yes";
+                tracker.push(node[pos][i]);
+                level.push(p);
+            }
+            i++;
+        }
+    }
+
+    while(!level.empty()){
+        p = level.front();
+        level.pop();
+        cout<<p.second<<" level : "<<p.first<<endl;
+    }
+}
+
+
+/// Big Mod
+
+long long BigMode(int a,int b,int m){
+    if(b == 0){
+        return 1;
+    }
+
+    int x = BigMode(a,b/2,m);
+    x = ((x%m)*(x%m))%m;
+    if(b%2 == 1)
+        x = ((x%m)*(a%m))%m;
+    return x;
+
+}
+
+/// GCD
+
+int gcd(int a , int b){
+
+    if(b == 0){
+        return a;
+    }
+
+    return gcd(b , a%b);
+}
+
+/// LCM
+
+
+int GCD(int a,int b){
+    if(b == 0)
+        return a;
+    GCD(b,a%b);
+}
+int LCM(int a ,int b){
+    return b*a/(GCD(a,b));
+
+}
+
+/// MergeSort
+
+int num[1000],temp[1000];
+
+int mergesort(int low , int high){
+
+    if(low == high)
+        return ;
+
+    int mid = (low+high)/2;
+
+    mergesort(low , mid);
+    mergesort(mid+1 , high);
+
+    for(int i = low ,int j = mid+1 , k = low  ; k <= high ; k++){
+        if(i == m+1){
+            temp[k] = num[j++];
+
+        }else if(j == high+1){
+            temp[k] = num[i++];
+
+        }else if(num[i] < num[j]){
+            temp[k] = num[j++];
+
+        }else{
+            temp[k] = num[i++];
+        }
+    }
+
+    for(int i = low ; i <= high ; i++){
+        num[i] = temp[i];
+    }
+
+}
+
+/// Permutation
+
+void Permutation(string str,int low, int high){
+
+    if(low == high){
+        cout<<str<<endl;
+    }else{
+
+        for(int j = low ; j <= high ; j++ ){
+
+            swap(str[j],str[low]);
+            Permutation(str,low+1,high);
+            swap(str[j],str[low]);
+        }
+
+    }
+
+}
+or
+
+int main(){
+
+    vector <int> v;
+    v.push_back(1);
+    v.push_back(2);
+    v.push_back(3);
+    sort(v.begin(),v.end());
+    do{
+        vector < int > ::iterator it;
+        for(it = v.begin() ; it != v.end() ; it++){
+            cout<<*it<<" ";
+        }
+        cout<<endl;
+    }while( next_permutation(v.begin(),v.end()));
+}
+
+/// set
+
+int main(){
+    set<int> s;
+
+    s.insert(12);
+    s.insert(13);
+    s.insert(13);
+    s.insert(12);
+    s.insert(16);
+
+    cout<<"size : "<<s.size()<<endl;
+
+    if(s.find(1)== s.end()){
+        cout<<"Find"<<endl;
+    }
+
+    while(!s.empty()){
+        cout<<s.end()<<endl;
+        s.
+    }
+
+    return 0;
+}
+
+/// Trie
+
+struct node
+{
+	bool endmark;
+	node *next[26+1];
+	node()
+	{
+		endmark=false;
+		for(int i=0;i<26;i++) next[i]=NULL;
+	}
+}*root;
+
+void insert(char *str,int len)
+{
+	node *curr=root;
+	for(int i=0;i<len;i++)
+	{
+		int id=str[i]-'a';
+		if(curr->next[id]==NULL)
+			curr->next[id]=new node();
+		curr=curr->next[id];
+	}
+	curr->endmark=true;
+
+}
+bool search(char *str,int len)
+{
+	node *curr=root;
+	for(int i=0;i<len;i++)
+	{
+		int id=str[i]-'a';
+		if(curr->next[id]==NULL) return false;
+		curr=curr->next[id];
+	}
+	return curr->endmark;
+}
+void del(node *cur)
+{
+      for(int i=0;i<26;i++)
+             if(cur->next[i])
+                  del(cur->next[i]) ;
+
+
+         delete(cur) ;
+}
+
+
+// Segment Tree
+
+void ConstructTree(int input[],int segTree[],int low,int high,int pos){
+
+    if(low == high){
+        segTree[pos] = input[low];
+    }else{
+
+        int mid = (low+high)/2;
+        ConstructTree(input,segTree,low,mid,2*pos+1);
+        ConstructTree(input,segTree,mid+1,high,2*pos+2);
+        segTree[pos] = min(segTree[2*pos+1],segTree[2*pos+2]);
+    }
+
+}
+
+int RangeMinQuery(int segTree[] , int qlow , int qhigh , int low , int high , int pos){
+    if(qlow <= low && qhigh >= high){
+        return segTree[pos];
+    }else if(low > qhigh || high < qlow){
+        return INT_MAX;
+    }
+    int mid = (low+high)/2;
+
+    return min(RangeMinQuery(segTree,qlow,qhigh,low,mid,2*pos+1),RangeMinQuery(segTree,qlow,qhigh,mid+1,high,2*pos+2));
+}
+
+/// Sieve
+
+using namespace std;
+map<int,int> mp;
+void PrimeList_bySieve(int n){
+    bool A[n+1];
+
+    for(int i = 2 ; i <= n ; i++)
+        A[i]= true;
+
+    for(int i = 2 ; i*i <= n ;i++ ){
+        if(A[i]){
+            for(int j = 2 ; i*j <= n ;j++){
+                A[i*j]=false;
+            }
+        }
+    }
+    int prime;
+    mp[1]=-1;
+    for(int i = 2 ; i <= n ; i++){
+        if(A[i]){
+            prime = i;
+        }
+        mp[i]=prime;
+    }
+}
+
+// Sieve other
+
+vector<int> PrimeList_bySieve(int n){
+    bool A[n+1];
+
+    for(int i = 2 ; i <= n ; i++)
+        A[i]= true;
+    int len = sqrt(n);
+    for(int i = 2 ; i <= len ;i++ ){
+        if(A[i]){
+            for(int j = 2 ; i*j <= n ;j++){
+                A[i*j]=false;
+            }
+        }
+    }
+    vector<int> primes;
+    for(int i = 2 ; i <= n ; i++)
+        if(A[i])
+            primes.push_back(i);
+    return primes;
+}
+
+
+int main(){
+    vector<int> primeNumber = PrimeList_bySieve(30);
+    for(vector<int>::iterator IT = primeNumber.begin() ; IT != primeNumber.end() ;IT++)
+        cout<<*IT<<" ";
+    return 0;
+}
+
+///Getline Input and convert value
+
+
+int main(){
+
+    string str;
+
+    getline(cin,str);
+
+    stringstream ss;
+
+    ss << str;
+
+    int num;
+    vector <int > v;
+
+    while(ss >> num){
+        v.push_back(num);
+    }
+
+    vector <int > :: iterator it;
+
+    for(it = v.begin() ; it != v.end() ; it++){
+        cout<<*it<<endl;
+    }
+
+}
+
+/// Sting to interger
+
+int main(){
+
+    string str = "1212 ishs";
+    int n = atoi(str.c_str());
+    cout<<n; //output 1212
+
+    return 0;
+}
+or
+
+int main(){
+    char str[3] ={"132"};
+    int n = atoi(str);
+    printf("%d\n",n);
+}
+
+/// String yo double
+int main(){
+
+    string str = "1212.232";
+    double num = atof(str.c_str());
+    cout<<num;
+
+    return 0;
+}
+
+/// Int to string
+
+#include <sstream>
+int main(){
+
+    int a=102;
+    stringstream ss;
+    ss<<a;
+    string str = ss.str();
+    cout<<str;
+    return 0;
+}
+
+///iterator
+vector<int>::iterator IT;
+for(IT = v.begain() ; IT!=v.end() ; IT++)
+    cout<<*IT<<endl;
+
+//
+
+/string ConvertBinary(int num)
+//{
+//    int r;
+//    string str="";
+//    while(num!=0)
+//    {
+//        r = num%2;
+//        if(r==1)
+//            str="1"+str;
+//        else
+//            str="0"+str;
+//        num /= 2;
+//    }
+//    return str;
+//}
+//
+//int BinaryToInteger(string str){
+//    int d = 1,ans=0;
+//    int len = str.length();
+//    for(int i = len-1 ; i >= 0 ; i--){
+//        if(str[i]=='1'){
+//            ans+=d;
+//        }
+//        d*=2;
+//    }
+//    return ans;
+//}
+//
+//int ConvertInt(int arr,int len){
+//    int d = 1;
+//    for(int i = len-1 ; i >= 0; i--){
+//
+//    }
+//}
+//
+//int XOR(int arr1[],int arr2[],int l1,int l2,int ans[]){
+//    int len = max(l1,l2);
+//
+//    for(int i = len-1 ; i >= 0 ; i--){
+//        if(arr1[i]!=arr2[2])
+//            ans[i]=1;
+//        else
+//            ans[i]=0;
+//    }
+//}
+//
+
+
+//int main()
+//{
+
+//    cout<<ConvertBinary(8)<<endl;
+//    cout<<BinaryToInteger("111")<<endl;
+
+//    int n,k,x,arr[64],len;
+//    memset(arr,0,sizeof(arr));
+//    cin>>n>>k>>x;
+//
+//    ConvertBinary(x,arr,len)
+//    vector<int> data;
+//
+//    for(int i = 0 ; i < n ; i++){
+//        int v;
+//        cin>>v;
+//        data.push_back(v);
+//    }
+//    sort(data.begin(),data.end());
+//    for(int i = 0 ; i < n ; i++){
+//        data[i]
+//    }
+//
+//    int n,arr1[64],len;
+//    ConvertBinary(10,arr1,len);
+//    for(int j=len-1; j>=0; j--)
+//        cout<<arr1[j];
+
+//    return 0;
+//}
+//
+//LL CeilAdd(LL n){
+//    if((n/2)*2 == n)
+//        return n/2;
+//    else
+//        return (n/2)+1;
+//
+//}
+//
+//int BinarySearch(LL first,LL last,LL n){
+//
+//    LL mid = CeilAdd(first+last);
+//
+//    cout<<first<<" "<<last<<" "<<mid<<endl;
+//
+//    if(mid+1 == last || mid-1 ==last )
+//        return 1;
+//
+//    if(mid < n){
+//        return 1+BinarySearch(mid,last,n);
+//    }else{
+//        return 1+BinarySearch(first,mid,n);
+//    }
+//}
+//
+//int main(){
+//    LL n,x;
+//    while(cin>>n>>x){
+//        if(n!=1 ){
+//            cout<<BinarySearch(0,n,x)<<endl;
+//        }else{
+//            cout<<"0\n";
+//        }
+//    }
+//    return 0;
+//}
+//
+//
+//
+//
+//
+//using namespace std;
+//unsigned long long n,x;
+//int BST(unsigned long long low ,unsigned long long high,unsigned long long x){
+////    cout<<low<<" "<<high<<"  "<<endl;
+//    if(high - low <= 1 )
+//        return 1;
+//    long long mid;
+//    if(low == 1){
+//        if(high%2==0)
+//            mid=high/2;
+//        else
+//            mid=(high/2)+1;
+//    }else{
+//        mid  = high-((high-low)/2);
+////        cout<<((high-low)/2)<<endl;
+//    }
+////    cout<<mid<<endl;
+//
+//    if(x > mid)
+//        low = mid;
+//    else
+//        high = mid;
+//
+//    return 1+BST(low,high,x);
+//}
+//
+//int main(){
+//    cin>>n>>x;
+//    if(n==1){
+//        cout<<"0\n";
+//        return 0;
+//    }
+//
+//    if(n%2==1)
+//        n++;
+//    cout<<BST(1,n/2)<<endl;
+//    return 0;
+//}
+//
+//
+//
+////#include <bits/stdc++.h>
+////
+////using namespace std;
+////
+////
+//////
+//////bool BFS(vector<int> data[]){
+//////    queue<int> traker;
+//////    map<int,string> Set;
+//////    map<int,string> visited;
+//////    traker.push(0);
+//////    Set[0] = "A";
+//////    visited[0]="yes";
+//////
+//////    while(!traker.empty()){
+//////        int node = traker.front();
+//////        traker.pop();
+//////        if(Set[node] == "A"){
+//////            int len = data[node].size();
+//////            for(int i = 0 ; i < len ; i++ ){
+//////                if(visited[data[node][i]] != "yes"){
+//////                    traker.push(data[node][i]);
+//////                    visited[data[node][i]] = "yes";
+//////                    Set[data[node][i]] = "B";
+//////                }else{
+//////                    if(Set[data[node][i]] == "A")
+//////                        return false;
+//////                }
+//////            }
+//////        }else{
+//////            int len = data[node].size();
+//////            for(int i = 0 ; i < len ; i++ ){
+//////                if(visited[data[node][i]] != "yes"){
+//////                    traker.push(data[node][i]);
+//////                    visited[data[node][i]] = "yes";
+//////                    Set[data[node][i]] = "A";
+//////                }else{
+//////                    if(Set[data[node][i]] == "B")
+//////                        return false;
+//////                }
+//////            }
+//////        }
+//////    }
+//////    return true;
+//////}
+//////
+//////int main()
+//////{
+//////    int n;
+//////
+//////    while(cin>>n){
+//////        if(n==0)
+//////            break;
+//////        int l;
+//////        cin>>l;
+//////        vector<int> data[n];
+//////        for(int i = 0 ; i < l ; i++){
+//////            int u,v;
+//////            cin>>u>>v;
+//////            data[u].push_back(v);
+//////            data[v].push_back(u);
+//////        }
+//////
+//////        if(BFS(data)){
+//////            cout<<"BICOLORABLE."<<endl;
+//////        }else{
+//////            cout<<"NOT BICOLORABLE."<<endl;
+//////        }
+//////
+//////    }
+////
+////    return 0;
+////}
+
+
+
+//LL range;
+//int BinarySearch(LL first,LL last,LL n){
+//
+//    LL mid;
+//
+//    mid = (last+first)/2;
+//
+//    cout<<first<<" "<<last<<" "<<mid<<endl;
+//
+//    if((mid != n && mid+1==last && mid-1==first)||(mid+1 == last && mid < n ) || (mid-1 ==first && mid > n) || (first+1==last))
+//        return 1;
+//
+//    if(mid < n){
+//        return 1+BinarySearch(mid+1,last,n);
+//    }else{
+//        return 1+BinarySearch(first,mid,n);
+//    }
+//}
+//
+//int main(){
+//    LL n,x;
+//    while(cin>>n>>x){
+//        range = n;
+//        if(n!=1 ){
+//            cout<<BinarySearch(1,n,x)<<endl;
+//        }else{
+//            cout<<"0\n";
+//        }
+//    }
+//    return 0;
+//}
+//
+//map<string,int> Len;
+//map<int,string> List;
+//map<int,string> OtherList;
+//int ListLength;
+//bool Compare(string str1,string str2){
+//    if(Len[str1] > Len[str2])
+//        return true;
+//    else if(Len[str1] < Len[str2])
+//        return false;
+//    else{
+//        int limit = Len[str1];
+//        for(int i = 0 ; i < limit ; i++){
+//            int d1,d2;
+//            d1 = str1[i]-48;
+//            d2 = str2[i]-48;
+////            cout<<d1<<" "<<d2<<endl;
+//            if(d1 < d2)
+//                return false;
+//        }
+//        return true;
+//    }
+//}
+//
+//void Insert_Number(string str,string cover){
+//    int position=ListLength;
+//    for(int i = 0 ; i < ListLength ; i++){
+//        if(!(Compare(str,List[i]))){
+//            position=i;
+////            cout<<i<<endl;
+//            break;
+//        }
+//    }
+//    ListLength++;
+//    for(int i = ListLength-1 ; i > position ; i--){
+//        List[i]=List[i-1];
+//        OtherList[i]=OtherList[i-1];
+////        cout<<List[i]<<endl;
+//    }
+//    List[position]=str;
+//    OtherList[position]=cover;
+//
+//}
+//
+//int main(){
+//
+//    int n;
+//    cin>>n;
+////    while(cin>>n)
+////    {
+//        ListLength=0;
+//        while(n--)
+//        {
+//            string str,cover;
+//            cin>>str;
+//            cover = str;
+//            Len[str] = str.length();
+//            int i;
+//            for(i=0 ; i < Len[str] ; i++){
+//                if(str[i]!='0')
+//                    break;
+//            }
+//            if(i!=0){
+//                if(i == Len[str])
+//                    str="0";
+//                else
+//                    str = str.substr(i,Len[str]);
+////                cout<<str<<endl;
+//                Len[str] = str.length();
+//            }
+//
+//            Insert_Number(str,cover);
+//        }
+//
+//
+//        for(int i = 0 ; i < ListLength ; i++)
+//        {
+//            cout<<OtherList[i]<<endl;
+//        }
+//
+//
+////    }
+//    return 0;
+//}
+
+
