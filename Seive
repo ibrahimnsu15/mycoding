@@ -1,0 +1,28 @@
+vector<int> Prime;
+void Seive(int n){
+    vector<int> num;
+    for (int i=1 ; i <= n ; i++){
+        if(i%2==0)
+            num.push_back(-1);
+        else
+            num.push_back(1);
+    }
+
+    for (int i=2 ; i <=n  ; i+=2){
+        num[i-1]=-1;
+    }
+    num[1]=1;
+    int sqt = ceil(sqrt(n));
+    for (LL i=3 ; i <= sqt ; i+=2){
+        if(num[i-1]==1){
+            for (int j=i*i ; j <= n ; j+=i){
+                num[j-1]=-1;
+            }
+        }
+    }
+    for (int i=2 ; i <= n ; i++){
+//        cout<<num[i-1]<<" "<<i<<endl;
+        if(num[i-1]==1) Prime.push_back(i);
+    }
+
+}
