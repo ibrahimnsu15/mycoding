@@ -1,4 +1,8 @@
-char num[201];
-long long remainder = 0;
-for (int i = 0; num[i] != '\0'; ++i)
-    remainder = (remainder * 10 + num[i] - '0') % 1000000007;
+
+
+LL Digit_Mod(string num,int len,int mod){
+    long long remainder = 0;
+    for (int i = 0; i < len; ++i)
+        remainder = (remainder * 10 + num[i] - '0') % mod;
+    return remainder;
+}
