@@ -1,0 +1,18 @@
+map<int,map<int,int> > mp;
+  for(int i = 0 ; i < 1440 ; i++ ) {
+    int dis=0;
+    for (int j = i+1 ; j !=i ; j++ ) {
+        if(j>= 1440) {
+           j=-1;
+           continue;
+           }
+            dis++;
+            mp[i][j]=dis;
+        }
+        mp[i][i]=0;
+  }
+
+int h1,m1,h2,m2; 
+ int s = h1*60+m1;
+ int e = h2*60+m2;
+ cout<< mp[s][e] <<endl;
